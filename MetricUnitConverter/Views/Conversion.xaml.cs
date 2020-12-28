@@ -15,5 +15,11 @@ namespace MetricUnitConverter.Views
             else
                 this.BindingContext = new ConversionViewModel();
         }
+
+        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if ((BindingContext as ConversionViewModel)!=null)
+                (BindingContext as ConversionViewModel).Convert.Execute(null);
+        }
     }
 }

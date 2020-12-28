@@ -35,7 +35,7 @@ namespace MetricUnitConverter.ViewModels
         } 
         private async Task onSelected()
         {
-            _conversionViewModel.ItemGroup = SelectedItem;
+            _conversionViewModel.ItemGroup = SelectedItem;//nefunguje
             _conversionViewModel.FromItem = null;
             _conversionViewModel.ToItem = null;
             await _pageService.PushModalAsync(new Conversion(_conversionViewModel));

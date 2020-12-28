@@ -23,14 +23,14 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Entry Keyboard="Numeric" Placeholder="value" Grid.Column="0" VerticalOptions="Center" Text="{Binding From}"/>
+                <Entry Keyboard="Numeric" Placeholder="value" Grid.Column="0" VerticalOptions="Center" Text="{Binding From}" TextChanged="Entry_TextChanged"/>
                 <Label Text="Tap to chose" Grid.Column="1" VerticalOptions="Center">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding FromUnit}" />
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="=" Grid.Column="2" VerticalOptions="Center" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
-                <Entry Keyboard="Numeric" Placeholder="value" Grid.Column="3" VerticalOptions="Center" Text="{Binding To}"/>
+                <Entry  Keyboard="Numeric" Placeholder="value" Grid.Column="3" VerticalOptions="Center" Text="{Binding To}"/>
                 <Label Text="Tap to chose" Grid.Column="4" VerticalOptions="Center">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ToUnit}" />

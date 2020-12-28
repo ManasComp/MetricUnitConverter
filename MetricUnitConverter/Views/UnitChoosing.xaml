@@ -6,9 +6,9 @@
              x:Class="MetricUnitConverter.Views.UnitChoosing"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True">
-    <ContentPage.BindingContext>
-        <vm:UnitChoosingViewModel x:Name="Model"/>
-    </ContentPage.BindingContext>
+    <!-- <ContentPage.BindingContext> -->
+    <!--     <vm:UnitChoosingViewModel x:Name="Model"/> -->
+    <!-- </ContentPage.BindingContext> -->
     <ContentPage.Content>
         <CollectionView SelectionChanged="CollectionView_SelectionChanged"  SelectionMode="Single" VerticalOptions="Center" ItemsSource="{Binding Collection}" SelectedItem="{Binding SelectedItem}">
             <CollectionView.ItemTemplate>

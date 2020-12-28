@@ -76,25 +76,26 @@ namespace MetricUnitConverter.ViewModels
         
         private async Task ConvertTo()
         {
-            To = From * (FromItem.ConvertionToBasicUnit / ToItem.ConvertionToBasicUnit);
+            if (From!=null && FromItem!=null && ToItem!=null)
+                To = From * (FromItem.ConvertionToBasicUnit / ToItem.ConvertionToBasicUnit);
         }
 
         private async void onUnitGroup()
         {
             UnitGroupChoosingViewModel unitGroupChoosingViewModel = new UnitGroupChoosingViewModel(this);
-            await _pageService.PushModalAsync(new UnitGroupChoosing());
+            await _pageService.PushModalAsync(new UnitGroupChoosing(unitGroupChoosingViewModel));
         }
         
         private async void onFromUnit()
         {
             UnitChoosingViewModel unitChoosingViewModel = new UnitChoosingViewModel(ItemGroup, true, this);
-            await _pageService.PushModalAsync(new UnitChoosing());
+            await _pageService.PushModalAsync(new UnitChoosing(unitChoosingViewModel));
         }
         
         private async void onToUnit()
         {
             UnitChoosingViewModel unitChoosingViewModel = new UnitChoosingViewModel(ItemGroup, false, this);
-            await _pageService.PushModalAsync(new UnitChoosing());
+            await _pageService.PushModalAsync(new UnitChoosing(unitChoosingViewModel));
         }
     }
 }
