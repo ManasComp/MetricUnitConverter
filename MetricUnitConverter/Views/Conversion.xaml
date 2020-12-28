@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MetricUnitConverter.Views.Conversion"
+             xmlns:vm="clr-namespace:MetricUnitConverter.ViewModels;assembly=MetricUnitConverter"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Units"/>
+                <Label Text="Tap to select">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MainGroup}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Entry Keyboard="Numeric" Placeholder="value" Grid.Column="0" VerticalOptions="Center" Text="{Binding From}"/>
+                <Label Text="Tap to chose" Grid.Column="1" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding FromUnit}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="=" Grid.Column="2" VerticalOptions="Center" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Entry Keyboard="Numeric" Placeholder="value" Grid.Column="3" VerticalOptions="Center" Text="{Binding To}"/>
+                <Label Text="Tap to chose" Grid.Column="4" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ToUnit}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <StackLayout Orientation="Horizontal">
+
+            </StackLayout>
+            <!--<CollectionView Opacity="{Binding ActivitiesOpacity}" x:Name="Activities_CollectionView" SelectionMode="Single" VerticalOptions="Center" Grid.Row="1" ItemsSource="{Binding Collection}"  BackgroundColor="Transparent">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="0,5,0,5">
+                            <Frame BackgroundColor="{Binding BackgroundSquareColor}" HasShadow="False" CornerRadius="20">
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                                    <Label TextColor="{Binding BackgroundTextColor}" BackgroundColor="Transparent" Text="{Binding Duration}" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="30"/>
+                                    <Label TextColor="{Binding BackgroundTextColor}" BackgroundColor="Transparent" Text="{Binding Name}" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="40"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>-->
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
